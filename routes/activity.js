@@ -20,7 +20,7 @@ function logData(req) {
         route: req.route,
         cookies: req.cookies,
         ip: req.ip,
-        path: req.path, 
+        path: req.path,
         host: req.host,
         fresh: req.fresh,
         stale: req.stale,
@@ -52,13 +52,13 @@ function logData(req) {
  */
 exports.edit = function (req, res) {
 
-    console.log("5 -- For Edit");	
-    console.log("4");	
-    console.log("3");	
-    console.log("2");	
-    console.log("1");	
-    //console.log("Edited: "+req.body.inArguments[0]);    
-    
+    console.log("5 -- For Edit");
+    console.log("4");
+    console.log("3");
+    console.log("2");
+    console.log("1");
+    //console.log("Edited: "+req.body.inArguments[0]);
+
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
     logData(req);
@@ -69,14 +69,14 @@ exports.edit = function (req, res) {
  * POST Handler for /save/ route of Activity.
  */
 exports.save = function (req, res) {
-    
-    console.log("5 -- For Save");	
-    console.log("4");	
-    console.log("3");	
-    console.log("2");	
-    console.log("1");	
+
+    console.log("5 -- For Save");
+    console.log("4");
+    console.log("3");
+    console.log("2");
+    console.log("1");
     //console.log("Saved: "+req.body.inArguments[0]);
-    
+
     // Data from the req and put it in an array accessible to the main app.
     console.log( req.body );
     logData(req);
@@ -88,13 +88,13 @@ exports.save = function (req, res) {
  */
 exports.execute = function (req, res) {
 
-    console.log("5 -- For Execute");	
-    console.log("4");	
-    console.log("3");	
-    console.log("2");	
-    console.log("1");	
+    console.log("5 -- For Execute");
+    console.log("4");
+    console.log("3");
+    console.log("2");
+    console.log("1");
     //console.log("Executed: "+req.body.inArguments[0]);
-    
+
     var requestBody = req.body.inArguments[0];
 
     const accountSid = requestBody.accountSid;
@@ -103,15 +103,15 @@ exports.execute = function (req, res) {
     const from = requestBody.messagingService;
     const body = requestBody.body;;
 
-    const client = require('twilio')(accountSid, authToken); 
-     
-    client.messages 
-          .create({ 
+    const client = require('twilio')(accountSid, authToken);
+
+    client.messages
+          .create({
              body: body,
              messagingService: messagingService,
              to: to
-           }) 
-          .then(message => console.log(message.sid)) 
+           })
+          .then(message => console.log(message.sid))
           .done();
 
 
@@ -130,10 +130,10 @@ exports.execute = function (req, res) {
     //     }
 
     //     if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
-            
+
     //         // decoded in arguments
     //         var decodedArgs = decoded.inArguments[0];
-            
+
     //         logData(req);
     //         res.send(200, 'Execute');
     //     } else {
@@ -149,17 +149,17 @@ exports.execute = function (req, res) {
  */
 exports.publish = function (req, res) {
 
-    console.log("5 -- For Publish");	
-    console.log("4");	
-    console.log("3");	
-    console.log("2");	
-    console.log("1");	
-    //console.log("Published: "+req.body.inArguments[0]);        
-    
+    console.log("5 -- For Publish");
+    console.log("4");
+    console.log("3");
+    console.log("2");
+    console.log("1");
+    //console.log("Published: "+req.body.inArguments[0]);
+
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
-//     logData(req);
-//     res.send(200, 'Publish');
+     logData(req);
+    res.send(200, 'Publish');
 };
 
 /*
@@ -167,13 +167,13 @@ exports.publish = function (req, res) {
  */
 exports.validate = function (req, res) {
 
-    console.log("5 -- For Validate");	
-    console.log("4");	
-    console.log("3");	
-    console.log("2");	
-    console.log("1");	
-    //console.log("Validated: "+req.body.inArguments[0]);       
-    
+    console.log("5 -- For Validate");
+    console.log("4");
+    console.log("3");
+    console.log("2");
+    console.log("1");
+    //console.log("Validated: "+req.body.inArguments[0]);
+
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
     logData(req);
